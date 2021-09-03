@@ -1,0 +1,21 @@
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    background-color: #282C35;
+}
+.jumbotron__content{    
+    background-image: url(../img/space-jam-2-trailer.png);
+    background-size: cover;
+    background-position: 20%;
+    height: 85vh;
+}
+.jumbotron__text{
+    opacity: .85
+}
+.logo__img{
+    height: 50px;
+}
+.form__list{
+    font-size: 18px;
+}
