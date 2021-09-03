@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="jumbotron__content px-4 py-5 mb-5 text-center bg-dark text-white">
+      
+      <div class="jumbotron__text col-lg-6 mx-auto bg-dark p-3">
+        <img class="d-block mx-auto mb-4" src="{% static 'img/logo.png' %}">
+        <p class="text-justify lead mb-4">En Qevana disfruta de las mejores peliculas y series gratis sin cortes. Estrenos en HD sin publicidad. Qevana Online, la mejor definición en estrenos!</p>
+        <p class="text-justify lead mb-4">¿Que desea ver?</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <button type="button" class="btn btn-outline-light btn-lg px-4 gap-3">Peliculas</button>
+          <button type="button" class="btn btn-outline-light btn-lg px-4">Series</button>
+        </div>
+      </div>
+    </div>
+{% endblock content %}

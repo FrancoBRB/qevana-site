@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>Qevana</title>
+
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/5a300f8a6c.js" crossorigin="anonymous"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <img class="logo__img" src="{% static 'img/logo.png' %}" alt="Logo">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-3 form__list">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-home"></i> Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-video"></i> Películas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-film"></i> Series</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Ingrese el título" aria-label="Search">
+            <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+{% block content %}
+{% endblock content %}
+
+    <!-- Footer -->
+
+        
+    <footer class="footer d-flex flex-wrap justify-content-between align-items-center py-3 mt-4 bg-dark">
+      <div class="container text-muted">
+        <p class="text-center fs-6">
+          Las Mejores películas, mejores peliculas 2021, mejores peliculas 2020, mejores peliculas 
+          2019, mejores peliculas de terror, mejores peliculas en netflix, 
+          peliculas de terror, las mejores peliculas de netflix, peliculas 
+          de comedia, mejores peliculas de comedia, mejores peliculas 
+          netflix 2021, peliculas online, las mejores peliculas 2020, las 
+          mejores peliculas de terror, mejores peliculas de accion, descargar peliculas, 
+          peliculas de accion, mejores peliculas mexicanas, mejores 
+          peliculas de netflix 2019, las mejores peliculas en netflix, 
+          mejores peliculas romanticas, las mejores peliculas de comedia, 
+          peliculas de amor y mejores peliculas actuales, peliculas online solo en 
+          qevana
+        </p>
+        <hr/>
+      </div>
+      
+      <p class="col-md-4 mb-0 text-muted">&copy; 2021 Qevana, Inc</p>
+
+      <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+      </a>
+  
+      <ul class="nav col-md-4 justify-content-end">
+        <li class="fs-4 nav-item"><a href="#" class="nav-link px-2 text-muted"><i class="fas fa-envelope"></i></a></li>
+        <li class="fs-4 nav-item"><a href="#" class="nav-link px-2 text-muted"><i class="fab fa-github"></i></a></li>        
+      </ul>
+    </footer>
+    <!-- Footer -->
+
+    <!-- Bootstrap JS -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    
+  </body>
+</html>
