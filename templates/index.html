@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <div class="jumbotron__content px-4 py-5 mb-5 text-center bg-dark text-white">
-      
+    <!-- Jumbotron -->
+    <div class="jumbotron__content px-4 py-5 mb-5 text-center bg-dark text-white">      
       <div class="jumbotron__text col-lg-6 mx-auto bg-dark p-3">
         <img class="d-block mx-auto mb-4" src="{% static 'img/logo.png' %}">
         <p class="text-justify lead mb-4">En Qevana disfruta de las mejores peliculas y series gratis sin cortes. Estrenos en HD sin publicidad. Qevana Online, la mejor definición en estrenos!</p>
@@ -12,5 +12,64 @@
           <button type="button" class="btn btn-outline-light btn-lg px-4">Series</button>
         </div>
       </div>
+    </div>
+    <!-- Jumbotron -->
+    <div class="container text-muted">
+        <h1><i class="far fa-star"></i> Estrenos 2021</h1>
+          <!-- Premiere List -->
+          <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="row">
+                    {% for movie in prem_movies %}
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 my-2">
+                          <a class="link-light text-decoration-none" href="/movies/{{ movie.slug }}">
+                            <div class="card bg-transparent border-0 text-center p-2 mx-auto" style='width: 16rem;'>
+                            {% if movie.thumbnail %}
+                            <img 
+                            src="{{ movie.thumbnail.url }}" 
+                            style="width: 100%;" class="card-img-top rounded-2" 
+                            alt="{{ movie.title }}">
+                            {% else %}
+                            No thumnail found for {{ movie.title }}, please upload an image.
+                            {% endif %}
+                            <div class="card-body">                                   
+                                <p class="card-text">{{ movie.title }} ({{movie.date}})</p>
+                            </div>                               
+                            </div>
+                          </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+    
+          <!-- Premiere List -->
+        <h2><i class="fas fa-video"></i> Películas Recomendadas</h2>
+        <!-- Recommended List -->
+        <div class="row justify-content-center">
+          <div class="col-12">
+              <div class="row">
+                  {% for movie in rec_movies %}
+                      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 my-2">
+                        <a class="link-light text-decoration-none" href="/movies/{{ movie.slug }}">
+                          <div class="card bg-transparent border-0 text-center p-2 mx-auto" style='width: 16rem;'>
+                          {% if movie.thumbnail %}
+                          <img 
+                          src="{{ movie.thumbnail.url }}" 
+                          style="width: 100%;" class="card-img-top rounded-2" 
+                          alt="{{ movie.title }}">
+                          {% else %}
+                          No thumnail found for {{ movie.title }}, please upload an image.
+                          {% endif %}
+                          <div class="card-body">                                   
+                              <p class="card-text">{{ movie.title }} ({{movie.date}})</p>
+                          </div>                               
+                          </div>
+                        </a>
+                      </div>
+                  {% endfor %}
+              </div>
+          </div>
+        <!-- Recommended List -->
+        <h2><i class="fas fa-film"></i> Series Recomendadas</h2>
     </div>
 {% endblock content %}
