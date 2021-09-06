@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container bg-dark mt-3 p-4">    
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 text-center">
+          <img src="{{ object.portrait.url }}" alt="{{object.title}}">
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-9">
+            <div class="container m-3 text-start text-light">
+                <h3>{{object.title}}</h3>
+                <p>@{{object.alt_title}}</p>
+                <p>País: {{object.country}}</p>
+                <p>Año: {{object.date}}</p>
+                {% for movie in object.genres.all %}<span class="badge badge-secondary bg-danger mx-1">{{movie.genre_name}}</span>{% endfor %}
+                <p class="mt-3">{{object.synopsis}}</p>
+            </div>
+        </div>
+      </div>
+</div>
+
+
+<div class="container mt-4">
+    <a href="{{ object.url }}" target="video_iframe">
+        <button type="button" class="btn btn-outline-light" data-toggle="tooltip" data-placement="bottom" title="Latino">Opcion 1</button>
+        </a>
+        {% if object.url2 == '' %}
+        <button type="button" class="btn btn-outline-light" disabled>Opcion 2</button>
+        {% else %}
+        <a href="{{ object.url2 }}" target="video_iframe">
+            <button type="button" class="btn btn-outline-light" data-toggle="tooltip" data-placement="bottom" title="Latino">Opcion 2</button> 
+        </a>
+        {% endif %}
+        {% if object.url3 == '' %}
+        <button type="button" class="btn btn-outline-light" disabled>Opcion 3</button>
+        {% else %}
+        <a href="{{ object.url3 }}" target="video_iframe">
+            <button type="button" class="btn btn-outline-light" data-toggle="tooltip" data-placement="bottom" title="Subtitulado">Opcion 3</button> 
+        </a>
+        {% endif %}   
+</div>
+<div class="container bg-dark mt-4 text-muted py-3 text-center overflow-auto">
+    <IFRAME SRC="{{ object.url }}" name="video_iframe" FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=NO WIDTH=640 HEIGHT=360 allowfullscreen></IFRAME> 
+</div>
+    
+
+{% endblock content %}
