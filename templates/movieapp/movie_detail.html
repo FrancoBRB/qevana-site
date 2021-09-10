@@ -43,6 +43,12 @@
 <div class="container bg-dark mt-4 text-muted py-3 text-center overflow-auto">
     <IFRAME SRC="{{ object.url }}" name="video_iframe" FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=NO WIDTH=640 HEIGHT=360 allowfullscreen></IFRAME> 
 </div>
+
+<div class="container mt-4">
+    <a href="{% url 'PetitionView' %}">
+        <button type="button" class="btn btn-outline-light">Reportar película caída</button>
+    </a>
+</div>
     
 
 {% endblock content %}
