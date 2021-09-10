@@ -11,7 +11,8 @@ urlpatterns = [
     path('', HomeView, name='HomeView'),
     path('movies/<slug:slug>',MovieDetailView.as_view(),name='MovieView'), 
     path('series/<slug:slug>',CapList,name='CapList'),
-    path('series/<slug:slug>/<int:no>',CapView,name='CapView'),    
+    path('series/<slug:slug>/<int:no>',CapView,name='CapView'),
+    path('search/',Search,name='Search'),    
 ]
 
 if settings.DEBUG:
