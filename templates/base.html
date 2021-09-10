@@ -43,8 +43,9 @@
               <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-film"></i> Series</a>
             </li>
           </ul>
-          <form class="d-flex" method="get">
-            <input class="form-control me-2" type="search" placeholder="Ingrese el título" aria-label="Search">
+          <form class="d-flex" method="POST" action={% url 'Search' %}>
+            {% csrf_token %}
+            <input class="form-control me-2" type="search" placeholder="Ingrese el título" aria-label="Search" name="search-bar">
             <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
           </form>
         </div>
@@ -58,7 +59,7 @@
     <!-- Footer -->
 
         
-    <footer class="footer d-flex flex-wrap py-3 mt-4 bg-dark">
+<footer class="footer d-flex flex-wrap py-3 mt-4 bg-dark">
       <div class="container-fluid text-muted">
         <p class="text-center fs-6">
           Las Mejores películas, mejores peliculas 2021, mejores peliculas 2020, mejores peliculas 
@@ -86,7 +87,7 @@
         <li class="fs-4 nav-item"><a href="#" class="nav-link px-2 text-muted"><i class="fas fa-envelope"></i></a></li>
         <li class="fs-4 nav-item"><a href="#" class="nav-link px-2 text-muted"><i class="fab fa-github"></i></a></li>        
       </ul>
-    </footer>
+</footer>
     <!-- Footer -->
 
     <!-- Bootstrap JS -->

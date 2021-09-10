@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Movies founded List -->
+
+<div class="container">
+    <h2 class="text-muted"><i class="fas fa-search"></i> Películas Encontradas</h2>
+        
+    <div class="row justify-content-center">
+      <div class="col-12">
+          <div class="row">
+              {% for movie in movies_founded %}
+                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 my-2">
+                   <a class="link-light text-decoration-none" href="/movies/{{ movie.slug }}">
+                    <div class="card bg-transparent border-0 text-center p-2 mx-auto" style='width: 16rem;'>
+                    {% if movie.thumbnail %}
+                    <img 
+                    src="{{ movie.thumbnail.url }}" 
+                    style="width: 100%;" class="card-img-top rounded-2" 
+                    alt="{{ movie.title }}">
+                    {% else %}
+                    No thumnail found for {{ movie.title }}, please upload an image.
+                    {% endif %}
+                    <div class="card-body">                                   
+                        <p class="card-text">{{ movie.title }} ({{movie.date}})</p>
+                    </div>                               
+                    </div>
+                  </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- Movies founded List -->
+
+<!-- Series founded List -->
+
+<div class="container">
+    <h2 class="text-muted"><i class="fas fa-search"></i> Series Encontradas</h2>
+        
+    <div class="row justify-content-center">
+      <div class="col-12">
+          <div class="row">
+              {% for serie in series_founded %}
+                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 my-2">
+                   <a class="link-light text-decoration-none" href="/series/{{ serie.slug }}">
+                    <div class="card bg-transparent border-0 text-center p-2 mx-auto" style='width: 16rem;'>
+                    {% if serie.thumbnail %}
+                    <img 
+                    src="{{ serie.thumbnail.url }}" 
+                    style="width: 100%;" class="card-img-top rounded-2" 
+                    alt="{{ serie.title }}">
+                    {% else %}
+                    No thumnail found for {{ serie.title }}, please upload an image.
+                    {% endif %}
+                    <div class="card-body">                                   
+                        <p class="card-text">{{ serie.title }} ({{serie.date}})</p>
+                    </div>                               
+                    </div>
+                  </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+
+<!-- Series founded List -->
+
+        
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% for i in movies_founded %}
+<p class="text-muted text-center">{{i.title}}</p>
+{% endfor %}
+
+{% for i in series_founded %}
+<p class="text-muted text-center">{{i.title}}</p>
+{% endfor %}
