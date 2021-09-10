@@ -10,6 +10,7 @@
     <div class="row justify-content-center">
       <div class="col-12">
           <div class="row">
+              {% if movies_founded %}
               {% for movie in movies_founded %}
                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 my-2">
                    <a class="link-light text-decoration-none" href="/movies/{{ movie.slug }}">
@@ -28,7 +29,10 @@
                     </div>
                   </a>
                 </div>
-            {% endfor %}
+              {% endfor %}
+              {% else %}
+              <p class="text-white">No se encontraron películas para "{{ searched }}"</p>
+              {% endif %}              
         </div>
     </div>
 </div>
@@ -43,6 +47,7 @@
     <div class="row justify-content-center">
       <div class="col-12">
           <div class="row">
+              {% if series_founded %}
               {% for serie in series_founded %}
                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 my-2">
                    <a class="link-light text-decoration-none" href="/series/{{ serie.slug }}">
@@ -62,6 +67,9 @@
                   </a>
                 </div>
             {% endfor %}
+            {% else %}
+            <p class="text-white">No se encontraron series para "{{ searched }}"</p>
+            {% endif %} 
         </div>
     </div>
 
