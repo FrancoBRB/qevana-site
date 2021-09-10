@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 from .views import *
 from movieapp.views import *
 from seriesapp.views import *
+from petitionsapp.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -12,7 +13,8 @@ urlpatterns = [
     path('movies/<slug:slug>',MovieDetailView.as_view(),name='MovieView'), 
     path('series/<slug:slug>',CapList,name='CapList'),
     path('series/<slug:slug>/<int:no>',CapView,name='CapView'),
-    path('search/',Search,name='Search'),    
+    path('search/',Search,name='Search'),
+    path('petitions/', PetitionView, name='PetitionView'),  
 ]
 
 if settings.DEBUG:

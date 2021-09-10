@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+from django.contrib.messages import constants as message_constants
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -16,6 +17,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# SMTP SETTINGS
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = '64acc5018c2659'
+EMAIL_HOST_PASSWORD = '093c89838d9f00'
+EMAIL_PORT = '2525'
+
+
 
 # Application definition
 
@@ -28,9 +39,24 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #Custom apps
+    'crispy_forms',
+
+    #My apps
     'movieapp',
     'seriesapp',
+    'petitionsapp',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+MESSAGE_TAGS = {
+    message_constants.DEBUG:'debug',
+    message_constants.INFO:'info',
+    message_constants.SUCCESS:'success',
+    message_constants.WARNING:'warning',
+    message_constants.ERROR:'danger',
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
