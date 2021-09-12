@@ -37,10 +37,7 @@
               <a class="nav-link active" aria-current="page" href="{% url 'HomeView' %}"><i class="fas fa-home"></i> Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-video"></i> Películas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-film"></i> Series</a>
+              <a class="nav-link active" aria-current="page" href="{% url 'catalog' %}"><i class="fas fa-film"></i> Catalogo</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="{% url 'PetitionView' %}"><i class="fas fa-box"></i> Pedidos</a>
@@ -60,9 +57,8 @@
 {% endblock content %}
 
     <!-- Footer -->
-
         
-<footer class="footer d-flex flex-wrap py-3 mt-4 bg-dark">
+    <footer class="footer d-flex flex-wrap py-3 mt-4 bg-dark">
       <div class="container-fluid text-muted">
         <p class="text-center fs-6">
           Las Mejores películas, mejores peliculas 2021, mejores peliculas 2020, mejores peliculas 
@@ -87,11 +83,13 @@
       </a>
   
       <ul class="nav col-md-4 justify-content-end">
-        <li class="fs-4 nav-item"><a href="#" class="nav-link px-2 text-muted"><i class="fas fa-envelope"></i></a></li>
-        <li class="fs-4 nav-item"><a href="#" class="nav-link px-2 text-muted"><i class="fab fa-github"></i></a></li>        
+        <li class="fs-4 nav-item"><a href="mailto:francojb5@hotmail.com" class="nav-link px-2 text-muted"><i class="fas fa-envelope"></i></a></li>
+        <li class="fs-4 nav-item"><a href="https://github.com/FrancoBRB/" class="nav-link px-2 text-muted"><i class="fab fa-github"></i></a></li>        
       </ul>
 </footer>
     <!-- Footer -->
+
+
 
     <!-- Bootstrap JS -->
     

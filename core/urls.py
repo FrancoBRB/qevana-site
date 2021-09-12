@@ -6,6 +6,7 @@ from .views import *
 from movieapp.views import *
 from seriesapp.views import *
 from petitionsapp.views import *
+from catalog.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -14,7 +15,9 @@ urlpatterns = [
     path('series/<slug:slug>',CapList,name='CapList'),
     path('series/<slug:slug>/<int:no>',CapView,name='CapView'),
     path('search/',Search,name='Search'),
-    path('petitions/', PetitionView, name='PetitionView'),  
+    path('petitions/', PetitionView, name='PetitionView'),
+    path('catalog/',CatalogView,name='catalog'),
+    path('catalog/<int:pk>',GenreView,name='GenreView'),
 ]
 
 if settings.DEBUG:

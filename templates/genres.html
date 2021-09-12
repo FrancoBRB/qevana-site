@@ -5,7 +5,7 @@
 <!-- Movies founded List -->
 
 <div class="container-fluid">
-    <h2 class="text-muted"><i class="fas fa-search"></i> Películas Encontradas</h2>
+    <h2 class="text-muted"><i class="fas fa-search"></i> Películas Encontradas de {{ genre.genre_name }}</h2>
         
     <div class="row justify-content-center">
       <div class="col-12">
@@ -31,7 +31,7 @@
                 </div>
               {% endfor %}
               {% else %}
-              <p class="text-white">No se encontraron películas para "{{ searched }}"</p>
+              <p class="text-white">No se encontraron películas para el genero "{{ genre.genre_name }}"</p>
               {% endif %}              
         </div>
     </div>
@@ -42,7 +42,7 @@
 <!-- Series founded List -->
 
 <div class="container-fluid">
-    <h2 class="text-muted"><i class="fas fa-search"></i> Series Encontradas</h2>
+    <h2 class="text-muted"><i class="fas fa-search"></i> Series Encontradas de {{ genre.genre_name }}</h2>
         
     <div class="row justify-content-center">
       <div class="col-12">
@@ -68,7 +68,7 @@
                 </div>
             {% endfor %}
             {% else %}
-            <p class="text-white">No se encontraron series para "{{ searched }}"</p>
+            <p class="text-white">No se encontraron series para el genero "{{ genre.genre_name }}"</p>
             {% endif %} 
         </div>
     </div>
