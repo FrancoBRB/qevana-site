@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'movieapp',
     'seriesapp',
     'petitionsapp',
+    'catalog'
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
