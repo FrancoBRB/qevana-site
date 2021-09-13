@@ -5,7 +5,6 @@ from django.db.models.fields import TextField
 
 class Genres(models.Model):
     genre_name = models.CharField(max_length=100)
-
     class Meta:
         verbose_name = 'Genero'
         verbose_name_plural = 'Generos'

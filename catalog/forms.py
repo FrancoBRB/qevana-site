@@ -1,7 +1,8 @@
 from django import forms
-from movieapp.models import Genres
+#from movieapp.models import Genres
 
-genre_list = Genres.objects.all()
+#genre_list = Genres.objects.all()
+genre_list = ('Accción','Suspenso','Drama')
 GENRE_CHOICES = ()
 
 for genre in genre_list:
