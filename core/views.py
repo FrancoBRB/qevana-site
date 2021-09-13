@@ -1,8 +1,7 @@
 from django.db.models.query_utils import Q
 from django.shortcuts import render
-from movieapp.models import *
+from movieapp.models import Movie
 from seriesapp.models import Serie
-import string
 
 def HomeView(request):
     rec_movies = Movie.objects.filter(recommended=True)
