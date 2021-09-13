@@ -18,6 +18,7 @@ DEBUG = True#config('DEBUG', default=True, cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS')
 
+
 # SMTP SETTINGS
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -96,6 +97,16 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DEBUG DB 
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+'''
+# PROD DB
 
 import dj_database_url
 
@@ -155,8 +166,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# Security
+'''
+SECURE_HSTS_SECONDS=0
+SECURE_HSTS_INCLUDE_SUBDOMAINS=False
+SECURE_HSTS_PRELOAD=False
+SECURE_SSL_REDIRECT=False
+SESSION_COOKIE_SECURE=False
+'''
+# Security for PROD
 
 SECURE_HSTS_SECONDS=2592000
 SECURE_HSTS_INCLUDE_SUBDOMAINS=True
