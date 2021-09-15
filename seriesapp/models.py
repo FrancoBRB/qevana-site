@@ -11,8 +11,8 @@ class Serie(models.Model):
     date = models.IntegerField('Año')
     synopsis= models.TextField('Sinopsis')
     genres= models.ManyToManyField(Genres,verbose_name='Generos')
-    thumbnail= models.ImageField('Miniatura (225x125)')
-    portrait= models.ImageField('Portada (300x450)')
+    thumbnail= models.CharField('Miniatura (225x125)',max_length=300)
+    portrait= models.CharField('Portada (300x450)',max_length=300)
     recommended = models.BooleanField('Recomendada?',default=False) 
     up_date = models.DateField(auto_now_add=True)
 

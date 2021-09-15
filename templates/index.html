@@ -27,7 +27,7 @@
                         <div class="card bg-transparent border-0 text-center p-2 mx-auto" style='width: 16rem;'>
                         {% if movie.thumbnail %}
                         <img 
-                        src="{{ movie.thumbnail.url }}" 
+                        src="{{ movie.thumbnail }}" 
                         style="width: 100%;" class="card-img-top rounded-2" 
                         alt="{{ movie.title }}">
                         {% else %}
@@ -55,7 +55,7 @@
                       <div class="card bg-transparent border-0 text-center p-2 mx-auto" style='width: 16rem;'>
                       {% if movie.thumbnail %}
                       <img 
-                      src="{{ movie.thumbnail.url }}" 
+                      src="{{ movie.thumbnail }}" 
                       style="width: 100%;" class="card-img-top rounded-2" 
                       alt="{{ movie.title }}">
                       {% else %}
